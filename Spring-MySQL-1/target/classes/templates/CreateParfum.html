@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+    <title>Bootstrap Form Tutorial</title>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Ajouter
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                        <li><a class="dropdown-item" th:href="@{createParfum}">Parfum</a></li>
+                        <li><a class="dropdown-item" th:href="@{createProduct}">Makeup</a></li>
+                        <li><a class="dropdown-item" th:href="@{createCategorie}">Marque</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Afficher
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                        <li><a class="dropdown-item" th:href="@{parfumsList}">Parfum</a></li>
+                        <li><a class="dropdown-item" th:href="@{productsList}">Makeup</a></li>
+                        <li><a class="dropdown-item" th:href="@{categoriesList}">Marque</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">logout</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<body class="container bg-light">
+<!-- Start Header form -->
+<div class="text-center pt-5">
+    <img src="https://i.ibb.co/nfHYLcd/kisspng-chanel-no-5-watercolor-painting-coco-perfume-perfume-5a6dd38c0ca040-3205371915171470200517.png" alt="network-logo" width="72" height="72" />
+    <h2>Create Parfum</h2>
+    <p>
+
+    </p>
+</div>
+<!-- End Header form -->
+
+<!-- Start Card -->
+<div class="card">
+    <!-- Start Card Body -->
+    <div class="card-body">
+        <!-- Start Form -->
+        <form id="bookingForm" th:action="@{saveParfum}"  class="needs-validation" novalidate autocomplete="off">
+            <!-- Start Input Name -->
+            <div class="form-group">
+                <label for="inputName">name Parfum</label>
+                <input type="text" class="form-control" id="inputName" name="nameParfum" placeholder="Your name Parfum" required />
+                <small class="form-text text-muted">Please fill name Parfum</small>
+            </div>
+            <!-- End Input Name -->
+
+            <!-- Start Input Email -->
+            <div class="form-group">
+                <label for="inputEmail">priceParfum</label>
+                <input type="number" class="form-control" id="inputEmail" name="priceParfum" placeholder="Enter priceParfum"  required />
+
+            </div>
+            <div class="form-group">
+                <label for="inputEmail2">priceParfum</label>
+                <input type="number" class="form-control" id="inputEmail2" name="stockParfum" placeholder="Enter stockParfum"  required />
+
+            </div>
+            <!-- End Input Email -->
+
+            <!-- Start Input Telephone -->
+            <div class="form-group">
+                <label for="inputPhone">date Create</label>
+                <input type="date" class="form-control" id="inputPhone" name="dateCreate" required />
+
+            </div>
+            <!-- End Input Telephone -->
+            <div class="form-group">
+                <label for="Categorie">Categorie</label>
+                <input type="text" class="form-control" id="Categorie" name="idcat" />
+                <small class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+            </div>
+
+
+
+
+            <hr />
+
+
+            <!-- End Check Snack Type -->
+            <!-- Start Submit Button -->
+            <button class="btn btn-primary btn-block col-lg-2" type="submit">Submit</button>
+            <!-- End Submit Button -->
+        </form>
+        <!-- End Form -->
+    </div>
+    <!-- End Card Body -->
+</div>
+<!-- End Card -->
+<footer>
+    <div class="my-4 text-muted text-center">
+        <p>© My Company</p>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
